@@ -1,0 +1,84 @@
+nav {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  background-color: #28292c;
+  padding: 6px 10px;
+  color: #e2b714;
+  user-select: none;
+  z-index: 100;
+}
+nav .logo {
+  font-size: 30px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0 10px;
+
+}
+
+nav .logo span{
+  background-color: #e2b714;
+  border-radius: 8px;
+  color: #313339;
+  padding:5px 7px;
+}
+
+nav .options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+}
+nav .options .no-user.hide{
+  display: none;
+  pointer-events: none;
+}
+nav .options .user-in.hide{
+  display: none;
+  pointer-events: none;
+}
+nav .options a ,nav .options #sign-out-btn{
+  text-decoration: none;
+  color: #e2b714;
+  padding: 12px 10px;
+  border-radius: 6px;
+  font-size: 16px;
+  transition: background-color .1s;
+}
+nav .options img{
+  height: 28px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 2px;
+}
+nav .options #sign-out-btn{
+  cursor: pointer;
+  background-color:#28292c ;
+  border: none;
+}
+nav .options a:hover,nav .options #sign-out-btn:hover{
+  background-color: #323438;
+}
+nav .options .chose-language{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+}
+nav .options .chose-language button{
+  padding: 5px;
+  border: none;
+  background-color: #323438;
+  color: #e2b714;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+nav .options .chose-language .active{
+
+  background-color: #e2b714;
+  color: #323438;
+}

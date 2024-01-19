@@ -1,0 +1,152 @@
+.main-cont {
+  position: absolute;
+  width: 90%;
+  top: 54px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main-cont .cont {
+  padding: 50px 0 0 0;
+}
+.main-cont .cont .up-content-cont {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding: 0 0 30px 0;
+  gap: 20px;
+}
+.main-cont .cont .up-content-cont.hide {
+  display: none;
+  pointer-events: none;
+}
+.main-cont .cont .up-content-cont input {
+  border: 2px solid #555555;
+  outline: none;
+  caret-color: #e2b714;
+  background-color: #28292c;
+  border-radius: 12px;
+  padding: 10px;
+  max-width: 300px;
+  width: 100%;
+  font-size: 18px;
+  color: #c5c5c5;
+}
+.main-cont .cont .up-content-cont input:focus {
+  border: 2px solid #e2b714;
+}
+.main-cont .cont .up-content-cont button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  user-select: none;
+  background-color: #e2b714;
+  color: #161616;
+  font-weight: 600;
+  font-size: 16px;
+  padding: 10px;
+  transition: background .15s;
+  border-radius: 12px;
+  border: none;
+}
+.main-cont .cont .up-content-cont button:hover {
+  background-color: #e6c960;
+}
+.main-cont .cont .up-content-cont button svg {
+  height: 32px;
+}
+
+.main-cont .cont .announcements-cont {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 30px;
+}
+.announcement {
+  display: flex;
+  background-color: #28292c;
+  max-width: 350px;
+  min-width: 180px;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+  flex-grow: 1;
+
+}
+.announcement:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 5px rgba(0, 0, 0, 0.4);
+}
+.announcement .left-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  color: #e2b714;
+}
+.announcement .left-cont .brand {
+  font-size: 26px;
+}
+.announcement .right-cont {
+  display: flex;
+  flex-direction: column;
+}
+.announcement .right-cont .edit-btn-cont {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
+.announcement .right-cont .edit-btn-cont button {
+  background-color: #555555;
+  color: #e2b714;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  cursor: pointer;
+  font-weight: 600;transition: background .1s;
+}
+.announcement .right-cont .edit-btn-cont .edit-announcement-btn.hide{
+  display: none;
+  pointer-events: none;
+}
+.announcement .right-cont .edit-btn-cont button:hover {
+  background-color: #727272;
+}
+.announcement .right-cont .picture {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+}
+.announcement .right-cont .picture img {
+  max-width: 100px;
+  width: 100%;
+  border-radius: 6px;
+  aspect-ratio: 1/1;
+  transition: opacity 0.15s ease, transform 0.4s ease;
+}
+
+.announcement .right-cont .picture div {
+  font-size: 30px;
+  font-weight: 500;
+  color: #fff;
+  pointer-events: none;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.15s ease;
+}
+
+.announcement .right-cont .picture img:hover {
+  opacity: 0.5;
+  transform: scale(1.15); 
+}
+
+.announcement .right-cont .picture:hover div {
+  opacity: 1;
+}

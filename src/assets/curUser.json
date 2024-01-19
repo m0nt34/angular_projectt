@@ -1,0 +1,13 @@
+{
+  "userSignedIn":false,
+  "curUserInfo": [
+    {
+      "name": "",
+      "lastname": "",
+      "Email": "",
+      "username": "",
+      "password": "",
+      "id": 0
+    }
+  ]
+}

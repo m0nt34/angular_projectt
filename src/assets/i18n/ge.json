@@ -1,0 +1,76 @@
+{
+  "navbar.sign-in": "შესვლა",
+  "navbar.sign-out": "გამოსვლა",
+  "navbar.registration": "დარეგესტრირება",
+  "navbar.en": "ინ",
+  "navbar.ge": "ქა",
+
+  "sign-in.title":"ავტორიზაცია",
+  "sign-in.eEmail":"ელფოსტა",
+  "sign-in.ePassword":"პაროლი",
+  "sign-in.sign-in":"შესვლა",
+
+  "sign-in.message.Email":"არასწორი პაროლი შეყვანილი ელფოსტისთვის",
+  "sign-in.message.Email1":"ესეთი ელფოსტა არ არსებობს",
+  
+  "registration.title":"ანგარიშის შექმნა",
+  "registration.name":"შეიყვანეთ სახელი",
+  "registration.lname":"შეიყვანეთ გვარი",
+  "registration.Email":"შეიყვანეთ ელფოსტა",
+  "registration.uname":"შეიყვანეთ მომხმარებლის სახელი",
+  "registration.password":"შეიყვანეთ პაროლი",
+  "registration.cpassword":"გაიმეორეთ პაროლი",
+  "registration.submit":"დადასტურება",
+
+  "registration.message.name":"ჩაწერილი სახელი არ არის ვალიდური",
+  "registration.message.lname":"ჩაწერილი გვარი არ არის ვალიდური",
+  "registration.message.Email":"ჩაწერილი ელფოსტა არ არის ვალიდური",
+  "registration.message.uname":"ჩაწერილი მომხმარებლის სახელი არ არის ვალიდური",
+  "registration.message.password":"ჩაწერილი პაროლი არ არის ვალიდური",
+  "registration.message.cpassword1":"პაროლები არ ემთხვევა",
+  "registration.message.cpassword":"ჩაწერილი პაროლის გამეორება არ არის ვალიდური",
+  "registration.message.uexists":"მომხმარებელი ასეთი ელფოსტით უკვე არსებობს",
+
+  "home.search":"ძებნა",
+  "home.edit":"რედაქტირება",
+
+  "ca.title":"ძირითადი ინფორმაცია",
+  "ca.location":"ლოკაცია",
+  "ca.Year":"წელი",
+  "ca.Manufacturer":"მწარმოებელი",
+  "ca.Color":"ფერი",
+  "ca.Price":"ფასი",
+  "ca.Price.usd":"დოლ",
+  "ca.Price.gel":"ლარ",
+  "ca.link":"დაამატეთ სურათის ლინკი",
+  "ca.link.add":"დამატება",
+  "ca.description":"დაამატეთ აღწერა" ,
+  "ca.cancel":"გაუქმება",
+  "ca.publish":"ატვირთვა",
+
+  "ca.message":"შეტანილი ინფორმაცია არ არის ვალიდური",
+  "ca.message1":"საჭიროა მინიმუმ ერთი სურათის ატვირთვა",
+
+  "details.details":"დეტალები",
+  "details.Main-Specifications":"მთავარი მახასიათებლები",
+  "details.Manufacturer":"მწარმოებელი",
+  "details.Year":"წელი",
+  "details.Color":"ფერი",
+  "details.status":"სტატუსი",
+
+  
+  "pr.profile":"პროფილი",
+  "pr.name":"სახელი",
+  "pr.lastname":"გვარი",
+  "pr.Email":"ელფოსტა",
+  "pr.uname":"მომხმარებლის სახელი",
+  "pr.password":"პაროლი",
+  "pr.edit":"რედაქტირება",
+
+  "pr.em.name":"შეტანილი სახელი არ არის ვალიდური",
+  "pr.em.lastname":"შეტანილი გვარი არ არის ვალიდური",
+  "pr.em.Email":"შეტანილი ელფოსტა არ არის ვალიდური",
+  "pr.em.uname":"შეტანილი მომხმარებლის სახელი არ არის ვალიდური",
+  "pr.em.password":"შეტანილი პაროლი არ არის ვალიდური",
+  "pr.em.us":"მომხმარებელი ესეთი ელფოსტით უკვე არსებობს"
+}

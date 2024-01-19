@@ -1,0 +1,127 @@
+<form [formGroup]="personInfo" (click)="onFormClick()">
+  <h1>{{ "registration.title" | translate }}</h1>
+  <div>
+    <span>{{ "registration.name" | translate }}</span>
+    <input
+      type="text"
+      formControlName="name"
+      id="nameent"
+      name="name"
+      autocomplete="off"
+      placeholder="{{ 'registration.name' | translate }}"
+      #nameInputField
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('name')?.invalid &&
+        personInfo.get('name')?.touched &&
+        shouldDisplayError()
+      "
+      >{{'registration.message.name' | translate}}</span
+    >
+  </div>
+  <div>
+    <span>{{ 'registration.lname' | translate }}</span>
+    <input
+      type="text"
+      formControlName="lastname"
+      autocomplete="off"
+      placeholder="{{ 'registration.lname' | translate }}"
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('lastname')?.invalid &&
+        personInfo.get('lastname')?.touched &&
+        shouldDisplayError()
+      "
+      >{{'registration.message.lname' | translate}}</span
+    >
+  </div>
+  <div>
+    <span>{{ 'registration.Email' | translate }}</span>
+    <input
+      #EmailInpF
+      type="text"
+      formControlName="Email"
+      autocomplete="off"
+      placeholder="{{ 'registration.Email' | translate }}"
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('Email')?.invalid &&
+        personInfo.get('Email')?.touched &&
+        shouldDisplayError()
+      "
+      >{{'registration.message.Email' | translate}}</span
+    >
+  </div>
+  <div>
+    <span>{{ 'registration.uname' | translate }}</span>
+    <input
+      type="text"
+      formControlName="username"
+      autocomplete="off"
+      placeholder="{{ 'registration.uname' | translate }}"
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('username')?.invalid &&
+        personInfo.get('username')?.touched &&
+        shouldDisplayError()
+      "
+      >{{'registration.message.uname' | translate}}</span
+    >
+  </div>
+  <div>
+    <span>{{ 'registration.password' | translate }}</span>
+    <input
+      type="password"
+      formControlName="password"
+      autocomplete="off"
+      placeholder="{{ 'registration.password' | translate }}"
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('password')?.touched &&
+        shouldDisplayError() &&
+        personInfo.get('password')?.invalid
+      "
+      >{{'registration.message.password' | translate}}</span
+    >
+    <br> 
+    <span class="not-valid-txt" *ngIf="personInfo.hasError('passwordMismatch') && shouldDisplayError()"
+      >{{'registration.message.cpassword1' | translate}}</span
+    >
+  </div>
+  <div>
+    <span>{{ 'registration.cpassword' | translate }}</span>
+    <input 
+      type="password"
+      formControlName="cpassword"
+      autocomplete="off"
+      placeholder="{{ 'registration.cpassword' | translate }}"
+    />
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('cpassword')?.invalid &&
+        personInfo.get('cpassword')?.touched &&
+        shouldDisplayError()
+      "
+      >{{'registration.message.cpassword' | translate}}</span
+    >
+  </div>
+  <button class="submit-btn"  (click)="SubmitBtn(EmailInpF.value)">{{ 'registration.submit' | translate }}</button>
+  <span
+      class="email-al-exists-error-message"
+      *ngIf="
+        showErrorEmailExists
+      "
+      >{{'registration.message.uexists' | translate}}</span
+    >
+</form>

@@ -1,0 +1,79 @@
+<div class="main-cont">
+  <div class="cont">
+    <div class="up-content">
+      <div class="left-content">
+        <div class="title-model">
+          <div class="model-year">
+            <span class="model"> {{ carInfo.Manufacturer }} </span>
+            <span class="year"> {{ carInfo.year }} </span>
+          </div>
+          <div class="location">{{ carInfo.location }}</div>
+        </div>
+        <div class="imgs-main-cont">
+          <img src="{{ carInfo.imgs[imgId] }}" class="main-img" />
+          <div class="imgs-cont">
+            <img
+              *ngFor="let img of carInfo.imgs; let i = index"
+              [src]="img"
+              (click)="changeMainImg(i)"
+            />
+          </div>
+        </div>
+      </div>
+
+      <div class="main-info">
+        <div class="price">
+          {{ carInfo.price + " " + addValuteSign(carInfo.valute) }}
+        </div>
+        <div class="publisher-cont">
+          <div class="publisher">
+            <img src="../assets/guestPic.png" />
+            &nbsp;
+            <span class="name">{{ publisherInfo.name }}</span>
+            &nbsp;
+            <span class="lastname">{{ publisherInfo.lastname }}</span>
+          </div>
+          <div class="publishers-contacts">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <path
+                fill="currentColor"
+                d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2zm-2 0l-8 5l-8-5zm0 12H4V8l8 5l8-5z"
+              />
+            </svg>
+            &nbsp;<span>{{ publisherInfo.Email }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bottom-content">
+      <div class="description-main-cont">
+        <h3>{{ "details.details" | translate }}</h3>
+        <div class="description">{{ carInfo.description }}</div>
+      </div>
+      <div class="main-parameters-cont">
+        <h3>{{ "details.Main-Specifications" | translate }}</h3>
+        <div class="Manufacturer-info-cont">
+          <span>{{ "details.Manufacturer" | translate }}:</span>&nbsp;
+          <span>{{ carInfo.Manufacturer }}</span>
+        </div>
+        <div class="Year-info-cont">
+          <span>{{ "details.Year" | translate }}:</span>&nbsp;
+          <span>{{ carInfo.year }}</span>
+        </div>
+        <div class="Color-info-cont">
+          <span>{{ "details.Color" | translate }}:</span>&nbsp;
+          <span>{{ carInfo.color }}</span>
+        </div>
+        <div class="Status-info-cont">
+          <span>{{ "details.status" | translate }}:</span>&nbsp;
+          <span>{{ carInfo.status }}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

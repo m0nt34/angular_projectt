@@ -1,0 +1,101 @@
+<form [formGroup]="personInfo">
+  <h1>{{ "pr.profile" | translate }}</h1>
+  <div>
+    <div>
+      <span>{{'pr.name'|translate}} </span>
+      <input
+        type="text"
+        formControlName="name"
+        id="nameent"
+        autocomplete="off"
+        #nameInpField
+      />
+    </div>
+
+    <span
+      class="not-valid-txt"
+      *ngIf="personInfo.get('name')?.invalid && personInfo.get('name')?.touched"
+      >{{'pr.em.name'|translate}} </span
+    >
+  </div>
+  <div>
+    <div>
+      <span>{{'pr.lastname'|translate}} </span>
+      <input
+        type="text"
+        formControlName="lastname"
+        autocomplete="off"
+        #lastnameInpField
+      />
+    </div>
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('lastname')?.invalid &&
+        personInfo.get('lastname')?.touched
+      "
+      >{{'pr.em.lastname'|translate}}</span
+    >
+  </div>
+  <div>
+    <div>
+      <span>{{'pr.Email'|translate}} </span>
+      <input
+        #EmailInpFieald
+        type="text"
+        formControlName="Email"
+        autocomplete="off"
+      />
+    </div>
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('Email')?.invalid && personInfo.get('Email')?.touched
+      "
+      >{{'pr.em.Email'|translate}}</span
+    >
+  </div>
+  <div>
+    <div>
+      <span class="userNm">{{'pr.uname'|translate}} </span>
+      <input
+        type="text"
+        formControlName="username"
+        autocomplete="off"
+        #usernameInpField
+      />
+    </div>
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('username')?.invalid &&
+        personInfo.get('username')?.touched
+      "
+      >{{'pr.em.uname'|translate}}</span
+    >
+  </div>
+  <div>
+    <div>
+      <span>{{'pr.password'|translate}}</span>
+      <input
+        type="text"
+        formControlName="password"
+        autocomplete="off"
+        #passwordInpField
+      />
+    </div>
+    <span
+      class="not-valid-txt"
+      *ngIf="
+        personInfo.get('password')?.touched &&
+        personInfo.get('password')?.invalid
+      "
+      >{{'pr.em.password'|translate}}</span
+    >
+  </div>
+  <button class="edit-btn" (click)="editBtnFunction()">{{'pr.edit'|translate}}</button>
+
+  <span class="email-al-exists-error-message" *ngIf="showErrorEmailExists"
+    >{{'pr.em.us'|translate}}</span
+  >
+</form>

@@ -1,0 +1,48 @@
+<div class="main-cont">
+  <div class="cont">
+    <div class="up-content-cont">
+      <input
+        type="text"
+        placeholder="{{ 'home.search' | translate }}"
+        id="searchBar"
+      />
+      <button class="cna-btn" routerLink="/create-announcement">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+          <path
+            fill="none"
+            stroke="currentColor"
+            stroke-linecap="round"
+            stroke-width="2"
+            d="M12 19V5m7 7H5"
+          />
+        </svg>
+      </button>
+    </div>
+    <div class="announcements-cont">
+      <div *ngFor="let car of cars" class="announcement">
+        <div class="left-cont">
+          <h2 class="location">{{ car.location }}</h2>
+          <p class="manufacturer">{{ car.Manufacturer }}</p>
+          <p class="price">{{ car.price + " " + addValuteSign(car.valute) }}</p>
+          <p class="status">{{ car.status }}</p>
+        </div>
+        <div class="right-cont">
+          <div class="picture">
+            <img src="{{ car.imgs[0] }}" [routerLink]="['/details', car.id]" />
+            <div>
+              +<span>{{ car.imgs.length }}</span>
+            </div>
+          </div>
+          <div class="edit-btn-cont">
+            <button
+              *ngIf="checkIfCanEddit(car.publishersEmail)"
+              class="edit-announcement-btn"
+            >
+            {{ 'home.edit' | translate }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,41 @@
+<form [formGroup]="personInfo">
+  <h1>{{ "sign-in.title" | translate }}</h1>
+  <div>
+    <span>{{ "sign-in.eEmail" | translate }}</span>
+    <input
+      #email
+      type="text"
+      formControlName="Email"
+      autocomplete="off"
+      placeholder="{{ 'sign-in.eEmail' | translate }}"
+      id="EmailEnterField"
+    />
+  </div>
+  <div>
+    <span>{{ 'sign-in.ePassword' | translate }}</span>
+
+    <input
+      #passwordInput
+      type="password"
+      formControlName="password"
+      autocomplete="off"
+      placeholder="{{ 'sign-in.ePassword' | translate }}"
+    />
+    <br />
+    <span class="not-valid-txt" *ngIf="showErrorPasswordDoesNotMatch"
+      >{{'sign-in.message.Email' | translate}}</span
+    >
+  </div>
+  <button
+    class="submit-btn"
+    (click)="checkIfEx(email.value, passwordInput.value)"
+  >
+  {{ 'sign-in.sign-in' | translate }}
+  </button>
+  <br />
+  <span
+    class="not-valid-txt"
+    *ngIf="!doesEmailExist && showErrorEmailDoesNExists"
+    >{{'sign-in.message.Email1' | translate}}</span
+  >
+</form>
