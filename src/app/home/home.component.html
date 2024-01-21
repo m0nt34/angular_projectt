@@ -5,7 +5,10 @@
         type="text"
         placeholder="{{ 'home.search' | translate }}"
         id="searchBar"
-      />
+        #homePageSB
+        (input)="filterCards(homePageSB.value)"
+        (change)="filterCards(homePageSB.value)"
+      /><!--(input)="filterCards(homePageSB.value)"-->
       <button class="cna-btn" routerLink="/create-announcement">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
           <path
@@ -19,7 +22,7 @@
       </button>
     </div>
     <div class="announcements-cont">
-      <div *ngFor="let car of cars" class="announcement">
+      <div *ngFor="let car of cars" class="announcement"> 
         <div class="left-cont">
           <h2 class="location">{{ car.location }}</h2>
           <p class="manufacturer">{{ car.Manufacturer }}</p>
@@ -35,14 +38,26 @@
           </div>
           <div class="edit-btn-cont">
             <button
-              *ngIf="checkIfCanEddit(car.publishersEmail)"
+              *ngIf="checkIfCanEddit(car.publishersId)"
               class="edit-announcement-btn"
+              (click)="editBtnFunction(car.id)"
             >
-            {{ 'home.edit' | translate }}
+              {{ "home.edit" | translate }}
             </button>
           </div>
         </div>
+        <div class="BtnsCont" [id]="car.id + '-BtnsContId'">
+          <button (click)="editActiveBtnFunciton(car.id)">active</button>
+          <button (click)="editsoldBtnFunciton(car.id)">sold</button>
+          <button (click)="editDeleteBtnFunciton(car.id)">delete</button>
+          <button (click)="editCancelBtnFunciton(car.id)">cancel</button>
+        </div>
       </div>
+      <span
+        *ngIf="cars.length <= 0"
+        style="font-size: 28px; color: #ccc; margin-left: 6px; margin-top: 20px"
+        >{{ "home.nr" | translate }}</span
+      >
     </div>
   </div>
 </div>

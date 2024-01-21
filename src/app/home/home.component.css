@@ -74,7 +74,7 @@
   cursor: pointer;
   transition: transform 0.1s, box-shadow 0.1s;
   flex-grow: 1;
-
+  position: relative;
 }
 .announcement:hover {
   transform: translate(-2px, -2px);
@@ -149,4 +149,40 @@
 
 .announcement .right-cont .picture:hover div {
   opacity: 1;
+}
+.BtnsCont{
+display: none;
+pointer-events: none;
+  transition: transform .3s;
+  transform: translateY(187px);
+}
+.BtnsCont.active{
+  display: flex;
+  pointer-events: all;
+  flex-direction: column;
+  position: absolute;
+  justify-content: space-between;
+  background-color: #28292c;
+  border-radius: 8px;
+  padding:15px;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  gap: 4px;
+  transition: transform .3s;
+  transform: translateY(0);
+}
+.BtnsCont.active button{
+  height: 100%;
+  border-radius: 6px;
+  font-size: 20px;
+  cursor: pointer;
+  background-color: #5e5e5e;
+  border: none;
+  color: #ccc;
+  transition: background-color .15s;
+}
+.BtnsCont.active button:hover{
+  background-color: #535252;
 }

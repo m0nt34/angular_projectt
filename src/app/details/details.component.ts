@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import data from '../../assets/db.json'
+import data from '../../assets/db.json';
 
 @Component({
   selector: 'app-details',
@@ -10,33 +10,37 @@ import data from '../../assets/db.json'
 export class DetailsComponent {
   carId: number = 0;
   carInfo: any;
-  publisherInfo:any;
-  imgId:number = 0;
+  publisherInfo: any;
+  imgId: number = 0;
   constructor(private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
+    this.route.params.subscribe((params) => {
       this.carId = +params['id'];
+
       this.carInfo = this.getCarInfoById(this.carId);
-      this.publisherInfo = this.getPublisherInfoByEmail(this.carInfo.publishersEmail)
+      this.publisherInfo = this.getPublisherInfoByEmail(
+        this.carInfo.publishersId
+      );
       console.log('Car ID:', this.carId);
       console.log('Car Information:', this.carInfo);
     });
   }
-  getCarInfoById(id: number){
+  getCarInfoById(id: number) {
     const carsInfo = data.carsInfo;
-    const car = carsInfo.find(car => car.id === id);
+    const car = carsInfo.find((car) => car.id === id);
     return car;
   }
-  getPublisherInfoByEmail(Email: string){
+  getPublisherInfoByEmail(id: number) {
+    console.log(id);
     const publishInfo = data.users;
-    const publisher = publishInfo.find(user => user.Email ===Email);
+    const publisher = publishInfo.find((user) => user.id === id);
     return publisher;
   }
-  addValuteSign(valute:string){
-    return valute=="USD"?"$":"₾"
+  addValuteSign(valute: string) {
+    return valute == 'USD' ? '$' : '₾';
   }
-  changeMainImg(id:number){
+  changeMainImg(id: number) {
     this.imgId = id;
   }
 }

@@ -10,7 +10,7 @@ export async function changeUserData(
   password: string,
   http: HttpClient 
 ) {
-  try {
+  try { 
     const users = userData.users || [];
     const curUser = curUserData.curUserInfo || [];
     const storedUsers = localStorage.getItem('currentUser');

@@ -100,12 +100,16 @@
   cursor: pointer;
 }
 .up-content .main-info .publishers-contacts {
-  display: flex;
+  display: flex; 
   align-items: center;
-
+  
   padding: 10px 10px;
   border: #e2b714 solid 2px;
   border-radius: 4px;
+}
+.up-content .main-info .publishers-contacts span{
+  display: flex;
+  flex-wrap: wrap;
 }
 .bottom-content {
   display: flex;

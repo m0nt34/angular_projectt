@@ -384,12 +384,13 @@ export class CreateAnnouncementComponent {
   searchText: string = '';
   searchTextAb: string = '';
   isImage: boolean = true;
-
   ngOnInit() {
+    
     const curUser = localStorage.getItem('currentUser');
     if (curUser) {
       const curUserJson = JSON.parse(curUser);
-      this.carInfo.get('publishersEmail')?.setValue(curUserJson.Email);
+      this.carInfo.get('publishersId')?.setValue(curUserJson.id);
+
     }
     this.carInfo.get('valute')?.setValue('USD');
     this.filteredLocations = this.locations;
@@ -419,8 +420,8 @@ export class CreateAnnouncementComponent {
       description: new FormControl(''),
       valute: new FormControl(''),
       imgs: this.fb.array([], [Validators.minLength(1)]),
-      status: new FormControl('acative'),
-      publishersEmail: new FormControl(localStorage.getItem('Email')),
+      status: new FormControl('active'),
+      publishersId: new FormControl(Number(localStorage.getItem('id'))),
     });
   }
   //*******************************************************************************************************************
